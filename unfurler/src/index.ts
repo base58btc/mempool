@@ -171,7 +171,7 @@ class Server {
     const { lang, path } = parseLanguageUrl(rawPath);
     const matchedRoute = matchRoute(this.network, path);
     let ogImageUrl = config.SERVER.HOST + (matchedRoute.staticImg || matchedRoute.fallbackImg);
-    let ogTitle = 'The Mempool Open Source Project™';
+    let ogTitle = 'Base58 Signet Explorer';
 
     if (matchedRoute.render) {
       ogImageUrl = `${config.SERVER.HOST}/render/${lang || 'en'}/preview${path}`;
@@ -184,19 +184,19 @@ class Server {
       <head>
         <meta charset="utf-8">
         <title>${ogTitle}</title>
-        <meta name="description" content="The Mempool Open Source Project™ - Explore the full Bitcoin ecosystem with mempool.space™"/>
+        <meta name="description" content="Base58 Signet Explorer - learn you some bitcoin for greta good!"/>
         <meta property="og:image" content="${ogImageUrl}"/>
         <meta property="og:image:type" content="image/png"/>
         <meta property="og:image:width" content="${matchedRoute.render ? 1200 : 1000}"/>
         <meta property="og:image:height" content="${matchedRoute.render ? 600 : 500}"/>
         <meta property="og:title" content="${ogTitle}">
         <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:site" content="@mempool">
-        <meta property="twitter:creator" content="@mempool">
+        <meta property="twitter:site" content="@base58btc">
+        <meta property="twitter:creator" content="@base58btc">
         <meta property="twitter:title" content="${ogTitle}">
-        <meta property="twitter:description" content="Explore the full Bitcoin ecosystem with mempool.space"/>
+        <meta property="twitter:description" content="learn you some bitcoin for great good @base58btc!"/>
         <meta property="twitter:image:src" content="${ogImageUrl}"/>
-        <meta property="twitter:domain" content="mempool.space">
+        <meta property="twitter:domain" content="base58.space">
       <body></body>
       </html>
     `);
